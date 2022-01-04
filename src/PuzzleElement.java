@@ -2,14 +2,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLOutput;
 import java.util.Random;
 
 public class PuzzleElement {
+
+    Boolean correctPlace;
     int puzzleId;
     int  puzzleX, puzzleY;
     JLabel puzzleIcon;
     Random rand = new Random();
     Point prevPt, puzzleCorner;
+    int[] correctPuzzlePlacesX = {140,390,640,890,140,390,640,890,140,390,640,890};
+    int[] correctPuzzlePlacesY = {25,25,25,25,275,275,275,275,525,525,525,525};
     ImageIcon puzz1 = new ImageIcon("src/1.png");
     ImageIcon puzz2 = new ImageIcon("src/2.png");
     ImageIcon puzz3 = new ImageIcon("src/3.png");
@@ -25,7 +30,7 @@ public class PuzzleElement {
     ImageIcon[] puzz = {puzz1, puzz2, puzz3, puzz4, puzz5, puzz6, puzz7, puzz8, puzz9, puzz10, puzz11, puzz12 };
 
     PuzzleElement(JPanel p, int id){
-
+        correctPlace = false;
         puzzleId = id;
         puzzleX = rand.nextInt(1030);
         puzzleY = rand.nextInt(550);
@@ -71,9 +76,5 @@ public class PuzzleElement {
             puzzleCorner.setLocation(newX,newY);
             puzzleIcon.setBounds((int)puzzleCorner.getX(),(int)puzzleCorner.getY(),250,250);
         }
-    }
-
-    public int getPuzzleId(){
-        return puzzleId;
     }
 }

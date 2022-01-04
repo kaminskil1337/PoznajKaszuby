@@ -33,6 +33,7 @@ public class Main {
     public static void menuToNuty(){
         menu.clearFrame(frame);
         nuty.drawNuty(frame);
+        nuty.placeElements();
         nuty.btnMenu.addActionListener(e -> nutyToMenu());
 
     }
@@ -40,8 +41,9 @@ public class Main {
     public static void menuToPuzzle(){
         menu.clearFrame(frame);
         puzzle.drawPuzzle(frame);
+        puzzle.placePuzzles();
         puzzle.btnMenu.addActionListener(e -> puzzleToMenu());
-
+        puzzle.btnCheck.addActionListener(e -> puzzle.ifCorrect(frame));
     }
 
     public static void menuToGame(){

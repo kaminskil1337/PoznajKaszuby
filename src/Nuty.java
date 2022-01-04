@@ -1,15 +1,30 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Nuty {
     public JPanel nutyPanel, bottomPanel;
-    public JButton btnMenu;
+    public JButton btnMenu, btnCheck;
+    public JLabel successInfo, plansza;
+    static int x = 0;
+    static int correctIndicator = 0;
+
+    ImageIcon planszaImg = new ImageIcon("src/plansza.png");
+
+    List<NutyElement> listOfElements = new ArrayList<NutyElement>();
 
     public Nuty () {
+
+        plansza = new JLabel();
+        plansza.setBounds(203,93,868,613);
+        plansza.setIcon(planszaImg);
+
         nutyPanel = new JPanel();
-        nutyPanel.setBackground(Color.blue);
         nutyPanel.setBounds(0,0,1280,800);
         nutyPanel.setLayout(null);
+
+
 
         bottomPanel = new JPanel();
         bottomPanel.setBackground(Color.green);
@@ -21,6 +36,15 @@ public class Nuty {
         btnMenu.setText("Powrót do menu");
         bottomPanel.add(btnMenu);
     }
+
+    public void placeElements(){
+        for(; x < 6; x++){
+            listOfElements.add(new NutyElement(nutyPanel, x));
+
+            nutyPanel.add(plansza);
+        }
+    }
+
     public void drawNuty(JFrame f){
         f.add(nutyPanel);
         f.add(bottomPanel);
