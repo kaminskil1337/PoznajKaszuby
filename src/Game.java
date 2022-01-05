@@ -7,7 +7,6 @@ public class Game {
 
     public Game () {
         gamePanel = new JPanel();
-        gamePanel.setBackground(Color.blue);
         gamePanel.setBounds(0,0,1280,800);
         gamePanel.setLayout(null);
 

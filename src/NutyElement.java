@@ -5,14 +5,12 @@ import java.awt.event.MouseEvent;
 import java.util.Random;
 
 public class NutyElement {
-
-    Boolean correctPlace;
     int elementId, elementX, elementY, elementW, elementH;
     JLabel element;
     Random rand = new Random();
     Point prevPt, elementCorner;
-    int[] correctElementX = {355,262,389,499,773,528};
-    int[] correctElementY = {98,305,305,239,239,440};
+    int[] correctElementX = {352,256,386,496,770,525};
+    int[] correctElementY = {98,305,305,239,238,440};
     ImageIcon element1 = new ImageIcon("src/stoleca.png");
     ImageIcon element2 = new ImageIcon("src/proste.png");
     ImageIcon element3 = new ImageIcon("src/kolo.png");

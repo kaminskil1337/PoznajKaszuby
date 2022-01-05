@@ -35,6 +35,8 @@ public class Main {
         nuty.drawNuty(frame);
         nuty.placeElements();
         nuty.btnMenu.addActionListener(e -> nutyToMenu());
+        nuty.btnCheck.addActionListener(e -> nuty.ifCorrect(frame));
+        nuty.btnReset.addActionListener(e -> nuty.resetPuzzles(frame));
 
     }
 
@@ -44,6 +46,7 @@ public class Main {
         puzzle.placePuzzles();
         puzzle.btnMenu.addActionListener(e -> puzzleToMenu());
         puzzle.btnCheck.addActionListener(e -> puzzle.ifCorrect(frame));
+        puzzle.btnReset.addActionListener(e -> puzzle.resetPuzzles(frame));
     }
 
     public static void menuToGame(){
