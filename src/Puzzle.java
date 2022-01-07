@@ -77,10 +77,12 @@ public class Puzzle{
 
         }
         puzzlePanel.add(plansza);
+
     }
 
     public void ifCorrect(JFrame f){
         correctIndicator = 0;
+        System.out.println(System.nanoTime()/100000000/60);
         for (PuzzleElement x : listOfElements) {
             if((x.puzzleCorner.getX() == x.correctPuzzlePlacesX[x.puzzleId]) && (x.puzzleCorner.getY() == x.correctPuzzlePlacesY[x.puzzleId])){
                 correctIndicator ++;

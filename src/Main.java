@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class Main {
     public static JFrame frame;
@@ -6,6 +8,7 @@ public class Main {
     public static Puzzle puzzle;
     public static Nuty nuty;
     public static Game game;
+    public static char key;
 
     public static void main(String[ ] args) {
         ImageIcon icon = new ImageIcon("src/icon.png");
@@ -24,6 +27,7 @@ public class Main {
         menu.drawMenu(frame);
         menu.btnExit.addActionListener(e -> System.exit(0));
         menu.btnGame1.addActionListener(e -> menuToNuty());
+        menu.btnGame1Rules.addActionListener(e -> menuToRules1());
         menu.btnGame2.addActionListener(e -> menuToPuzzle());
         menu.btnGame3.addActionListener(e -> menuToGame());
 
@@ -37,7 +41,12 @@ public class Main {
         nuty.btnMenu.addActionListener(e -> nutyToMenu());
         nuty.btnCheck.addActionListener(e -> nuty.ifCorrect(frame));
         nuty.btnReset.addActionListener(e -> nuty.resetPuzzles(frame));
+    }
 
+    public static void menuToRules1(){
+        menu.clearFrame(frame);
+        nuty.drawRules(frame);
+        nuty.btnMenuRules.addActionListener(e -> nutyToMenu());
     }
 
     public static void menuToPuzzle(){
@@ -53,6 +62,7 @@ public class Main {
         menu.clearFrame(frame);
         game.drawGame(frame);
         game.btnMenu.addActionListener(e -> gameToMenu());
+        game.placeTrees();
     }
 
     public static void nutyToMenu(){

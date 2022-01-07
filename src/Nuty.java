@@ -5,13 +5,14 @@ import java.util.List;
 
 public class Nuty {
     Boolean solved = false;
-    public JPanel nutyPanel, bottomPanel, successPanel;
-    public JButton btnMenu, btnCheck, btnReset;
-    public JLabel successInfo, plansza;
+    public JPanel nutyPanel, bottomPanel, successPanel, rulesPanel;
+    public JButton btnMenu, btnCheck, btnReset, btnMenuRules;
+    public JLabel successInfo, plansza, rules;
     static int x = 0;
     static int correctIndicator = 0;
 
     ImageIcon planszaImg = new ImageIcon("src/plansza2.png");
+    ImageIcon rulesImg = new ImageIcon("src/rules1Img.png");
 
     List<NutyElement> listOfElements = new ArrayList<>();
 
@@ -21,19 +22,33 @@ public class Nuty {
         plansza.setBounds(0,0,1280,800);
         plansza.setIcon(planszaImg);
 
+        rules = new JLabel();
+        rules.setBounds(0,0,1280,1024);
+        rules.setIcon(rulesImg);
+
         nutyPanel = new JPanel();
         nutyPanel.setBounds(0,0,1280,800);
         nutyPanel.setLayout(null);
 
+        rulesPanel = new JPanel();
+        rulesPanel.setBounds(0,0,1280,1024);
+        rulesPanel.setLayout(null);
+
+
         bottomPanel = new JPanel();
-        bottomPanel.setBackground(Color.green);
         bottomPanel.setBounds(0,800,1280,224);
         bottomPanel.setLayout(null);
 
         btnMenu = new JButton();
-        btnMenu.setBounds(240,22,280,140);
         btnMenu.setText("Powrót do menu");
+        btnMenu.setBounds(240,22,280,140);
         bottomPanel.add(btnMenu);
+
+        btnMenuRules = new JButton();
+        btnMenuRules.setText("Powrót do menu");
+        btnMenuRules.setBounds(500, 750, 280, 140);
+        rulesPanel.add(btnMenuRules);
+        rulesPanel.add(rules);
 
         btnCheck = new JButton();
         btnCheck.setBounds(760, 22, 280, 140);
@@ -64,6 +79,7 @@ public class Nuty {
         f.add(nutyPanel);
         bottomPanel.remove(btnReset);
         bottomPanel.add(btnCheck);
+        bottomPanel.add(btnMenu);
         btnCheck.addActionListener(e -> ifCorrect(f));
         solved = false;
         f.repaint();
@@ -96,15 +112,22 @@ public class Nuty {
     }
 
     public void drawNuty(JFrame f){
+
         f.add(nutyPanel);
         f.add(bottomPanel);
         f.repaint();
     }
 
     public void clearFrame(JFrame f){
+        f.remove(rulesPanel);
         f.remove(nutyPanel);
         f.remove(successPanel);
         f.remove(bottomPanel);
+        f.repaint();
+    }
+
+    public void drawRules(JFrame f){
+        f.add(rulesPanel);
         f.repaint();
     }
 }
