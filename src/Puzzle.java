@@ -5,13 +5,15 @@ import java.util.List;
 
 public class Puzzle{
     Boolean solved = false;
-    public JPanel puzzlePanel, bottomPanel, successPanel;
-    public JButton btnMenu, btnCheck, btnReset;
-    public JLabel successInfo, plansza;
+    public JPanel puzzlePanel, bottomPanel, successPanel, rulesPanel;
+    public JButton btnMenu, btnCheck, btnReset, btnMenuRules;
+    public JLabel successInfo, plansza, rules;
     static int x = 0;
     static int correctIndicator = 0;
 
+    ImageIcon rulesImg = new ImageIcon("src/rules2Img.png");
     ImageIcon planszaImg = new ImageIcon("src/background.png");
+    ImageIcon info = new ImageIcon("src/infoZamek.png");
 
     List<PuzzleElement> listOfElements = new ArrayList<>();
 
@@ -21,12 +23,19 @@ public class Puzzle{
         plansza.setBounds(0,0,1280,800);
         plansza.setIcon(planszaImg);
 
+        rules = new JLabel();
+        rules.setBounds(0,0,1280,1024);
+        rules.setIcon(rulesImg);
+
         puzzlePanel = new JPanel();
         puzzlePanel.setBounds(0,0,1280,800);
         puzzlePanel.setLayout(null);
 
+        rulesPanel = new JPanel();
+        rulesPanel.setBounds(0,0,1280,1024);
+        rulesPanel.setLayout(null);
+
         bottomPanel = new JPanel();
-        bottomPanel.setBackground(Color.green);
         bottomPanel.setBounds(0,800,1280,224);
         bottomPanel.setLayout(null);
 
@@ -35,14 +44,20 @@ public class Puzzle{
         btnMenu.setText("Powrót do menu");
         bottomPanel.add(btnMenu);
 
+        btnMenuRules = new JButton();
+        btnMenuRules.setText("Powrót do menu");
+        btnMenuRules.setBounds(500, 750, 280, 140);
+        rulesPanel.add(btnMenuRules);
+        rulesPanel.add(rules);
+
         btnCheck = new JButton();
         btnCheck.setBounds(760, 22, 280, 140);
         btnCheck.setText("Sprawdź");
         bottomPanel.add(btnCheck);
 
         successInfo = new JLabel();
-        successInfo.setBounds(500,260,280,140);
-        successInfo.setText("Gratulacje");
+        successInfo.setBounds(0,0,1280,1024);
+        successInfo.setIcon(info);
 
         btnReset = new JButton();
         btnReset.setBounds(760,22,280,140);
@@ -104,9 +119,15 @@ public class Puzzle{
         f.repaint();
     }
     public void clearFrame(JFrame f){
+        f.remove(rulesPanel);
         f.remove(puzzlePanel);
         f.remove(successPanel);
         f.remove(bottomPanel);
+        f.repaint();
+    }
+
+    public void drawRules(JFrame f){
+        f.add(rulesPanel);
         f.repaint();
     }
 

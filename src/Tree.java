@@ -20,12 +20,9 @@ public class Tree {
         mapY = id / 12;
         mapX = id % 12;
 
-
-
         if(treeMap[mapY][mapX] == 1){
             treeElement = new JLabel();
             treeElement.setIcon(treeImg);
-            System.out.println(mapX+ " " + mapY);
             treeElement.setBounds(mapX*100+40,mapY*100,100,100);
             p.add(treeElement);
         }

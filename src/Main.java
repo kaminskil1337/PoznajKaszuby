@@ -29,7 +29,9 @@ public class Main {
         menu.btnGame1.addActionListener(e -> menuToNuty());
         menu.btnGame1Rules.addActionListener(e -> menuToRules1());
         menu.btnGame2.addActionListener(e -> menuToPuzzle());
+        menu.btnGame2Rules.addActionListener(e -> menuToRules2());
         menu.btnGame3.addActionListener(e -> menuToGame());
+        menu.btnGame3Rules.addActionListener(e -> menuToRules3());
 
     }
 
@@ -58,11 +60,23 @@ public class Main {
         puzzle.btnReset.addActionListener(e -> puzzle.resetPuzzles(frame));
     }
 
+    public static void menuToRules2(){
+        menu.clearFrame(frame);
+        puzzle.drawRules(frame);
+        puzzle.btnMenuRules.addActionListener(e -> puzzleToMenu());
+    }
+
     public static void menuToGame(){
         menu.clearFrame(frame);
         game.drawGame(frame);
         game.btnMenu.addActionListener(e -> gameToMenu());
         game.placeTrees();
+    }
+
+    public static void menuToRules3(){
+        menu.clearFrame(frame);
+        game.drawRules(frame);
+        game.btnMenuRules.addActionListener(e -> gameToMenu());
     }
 
     public static void nutyToMenu(){

@@ -13,6 +13,7 @@ public class Nuty {
 
     ImageIcon planszaImg = new ImageIcon("src/plansza2.png");
     ImageIcon rulesImg = new ImageIcon("src/rules1Img.png");
+    ImageIcon info = new ImageIcon("src/infoNuty.png");
 
     List<NutyElement> listOfElements = new ArrayList<>();
 
@@ -33,7 +34,6 @@ public class Nuty {
         rulesPanel = new JPanel();
         rulesPanel.setBounds(0,0,1280,1024);
         rulesPanel.setLayout(null);
-
 
         bottomPanel = new JPanel();
         bottomPanel.setBounds(0,800,1280,224);
@@ -56,8 +56,8 @@ public class Nuty {
         bottomPanel.add(btnCheck);
 
         successInfo = new JLabel();
-        successInfo.setBounds(500,260,280,140);
-        successInfo.setText("Gratulacje");
+        successInfo.setBounds(0,0,1280,1024);
+        successInfo.setIcon(info);
 
         btnReset = new JButton();
         btnReset.setBounds(760,22,280,140);
@@ -100,7 +100,6 @@ public class Nuty {
                 correctIndicator++;
             }
         }
-        System.out.println(correctIndicator);
         if(correctIndicator == 6){
             solved = true;
             bottomPanel.remove(btnCheck);
