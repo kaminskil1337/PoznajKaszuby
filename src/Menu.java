@@ -1,13 +1,11 @@
 import javax.swing.*;
-import java.awt.*;
-
 
 public class Menu {
     public JPanel menuPanel;
     public JButton btnGame1, btnGame1Rules, btnGame2, btnGame2Rules, btnGame3, btnGame3Rules, btnExit;
     public JLabel background;
 
-    ImageIcon backgroundImg = new ImageIcon("src/menuBackground.png");
+    ImageIcon backgroundImg = new ImageIcon("src/images/menuBackground.png");
 
     public Menu() {
         menuPanel = new JPanel();
@@ -34,11 +32,11 @@ public class Menu {
         btnGame3Rules.setBounds(500,600,280,40);
         btnExit.setBounds(500, 750, 280, 140);
 
-        btnGame1.setText("Nuty");
+        btnGame1.setText("Kaszubskie Nuty");
         btnGame1Rules.setText("Zasady");
         btnGame2.setText("Puzzle");
         btnGame2Rules.setText("Zasady");
-        btnGame3.setText("Gra");
+        btnGame3.setText("Tabakierki");
         btnGame3Rules.setText("Zasady");
         btnExit.setText("wyjscie");
 

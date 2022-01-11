@@ -11,12 +11,12 @@ public class NutyElement {
     Point prevPt, elementCorner;
     int[] correctElementX = {352,256,386,496,770,525};
     int[] correctElementY = {98,305,305,239,238,440};
-    ImageIcon element1 = new ImageIcon("src/stoleca.png");
-    ImageIcon element2 = new ImageIcon("src/proste.png");
-    ImageIcon element3 = new ImageIcon("src/kolo.png");
-    ImageIcon element4 = new ImageIcon("src/base.png");
-    ImageIcon element5 = new ImageIcon("src/ridel.png");
-    ImageIcon element6 = new ImageIcon("src/hoczi.png");
+    ImageIcon element1 = new ImageIcon("src/images/stoleca.png");
+    ImageIcon element2 = new ImageIcon("src/images/proste.png");
+    ImageIcon element3 = new ImageIcon("src/images/kolo.png");
+    ImageIcon element4 = new ImageIcon("src/images/base.png");
+    ImageIcon element5 = new ImageIcon("src/images/ridel.png");
+    ImageIcon element6 = new ImageIcon("src/images/hoczi.png");
     ImageIcon[] elements = {element1, element2, element3, element4, element5, element6 };
 
 

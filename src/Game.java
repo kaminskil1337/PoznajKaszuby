@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,21 +13,18 @@ public class Game{
     int mouseX, mouseY;
     boolean tabaka1, tabaka2, tabaka3;
 
-
-
     List<Tree> listOfTrees = new ArrayList<>();
 
     MoveListener moveListener;
 
-    ImageIcon congratsImg = new ImageIcon("src/congratsmessage.png");
-    ImageIcon kaszub = new ImageIcon("src/kaszub.png");
-    ImageIcon fail = new ImageIcon("src/fail.png");
-    ImageIcon start = new ImageIcon("src/start.png");
-    ImageIcon startMessage = new ImageIcon("src/startmessage.png");
-    ImageIcon tabaka = new ImageIcon("src/tabaka.png");
-    ImageIcon backgroundImg = new ImageIcon("src/gamebackground.png");
-    ImageIcon rulesImg = new ImageIcon("src/rules3Img.png");
-
+    ImageIcon congratsImg = new ImageIcon("src/images/congratsmessage.png");
+    ImageIcon kaszub = new ImageIcon("src/images/kaszub.png");
+    ImageIcon fail = new ImageIcon("src/images/fail.png");
+    ImageIcon start = new ImageIcon("src/images/start.png");
+    ImageIcon startMessage = new ImageIcon("src/images/startmessage.png");
+    ImageIcon tabaka = new ImageIcon("src/images/tabaka.png");
+    ImageIcon backgroundImg = new ImageIcon("src/images/gamebackground.png");
+    ImageIcon rulesImg = new ImageIcon("src/images/rules3Img.png");
 
     public Game() {
         background = new JLabel();
@@ -100,9 +96,6 @@ public class Game{
         ClickListener clickListener = new ClickListener();
         moveListener = new MoveListener();
         gamePanel.addMouseListener(clickListener);
-
-
-
     }
 
     private class MoveListener extends MouseAdapter {
@@ -133,9 +126,7 @@ public class Game{
                             gamePanel.removeMouseMotionListener(moveListener);
                             bottomPanel.add(failLabel);
                             bottomPanel.repaint();
-
                         }
-
                     }
                 }
 
@@ -163,18 +154,13 @@ public class Game{
                     }
                 }
 
-                if ((tabaka1 == true) && (tabaka2 == true) && (tabaka3 == true)){
+                if ((tabaka1) && (tabaka2) && (tabaka3)){
                     player.setBounds(65,725,50,50);
                     gamePanel.removeMouseMotionListener(moveListener);
                     bottomPanel.add(congratsLabel);
                     bottomPanel.repaint();
                 }
             }
-
-
-
-
-
         }
     }
 
@@ -208,24 +194,26 @@ public class Game{
             }
         }
 
-
+    /** Ułożenie drzew na planszy */
     public void placeTrees(){
         int id = 0;
         for(int x = 0; x < 8; x++){
             for (int y = 0; y < 12; y++){
-                listOfTrees.add(new Tree(gamePanel,id,x,y));
+                listOfTrees.add(new Tree(gamePanel,id));
                 id++;
             }
         }
         gamePanel.add(background);
     }
 
-
+    /** Wyświetlenie gry "Tabakierki" */
     public void drawGame(JFrame f){
         f.add(bottomPanel);
         f.add(gamePanel);
         f.repaint();
     }
+
+    /** Ukrycie wyświetlonej zawartości */
     public void clearFrame(JFrame f){
         f.remove(rulesPanel);
         f.remove(gamePanel);
@@ -233,6 +221,7 @@ public class Game{
         f.repaint();
     }
 
+    /** Wyświetlenie zasad gry "Tabakierki" */
     public void drawRules(JFrame f){
         f.add(rulesPanel);
         f.repaint();

@@ -11,9 +11,9 @@ public class Puzzle{
     static int x = 0;
     static int correctIndicator = 0;
 
-    ImageIcon rulesImg = new ImageIcon("src/rules2Img.png");
-    ImageIcon planszaImg = new ImageIcon("src/background.png");
-    ImageIcon info = new ImageIcon("src/infoZamek.png");
+    ImageIcon rulesImg = new ImageIcon("src/images/rules2Img.png");
+    ImageIcon planszaImg = new ImageIcon("src/images/background.png");
+    ImageIcon info = new ImageIcon("src/images/infoZamek.png");
 
     List<PuzzleElement> listOfElements = new ArrayList<>();
 
@@ -70,6 +70,18 @@ public class Puzzle{
 
     }
 
+    /** Ułożenie puzzli na planszy */
+    public void placePuzzles(){
+        for(; x < 12; x++)
+        {
+            listOfElements.add(new PuzzleElement(puzzlePanel, x));
+
+        }
+        puzzlePanel.add(plansza);
+
+    }
+
+    /** Zresetowanie pozycji puzzli na planszy */
     public void resetPuzzles(JFrame f){
         correctIndicator = 0;
         for (PuzzleElement el : listOfElements) {
@@ -85,19 +97,9 @@ public class Puzzle{
         f.repaint();
     }
 
-    public void placePuzzles(){
-        for(; x < 12; x++)
-        {
-            listOfElements.add(new PuzzleElement(puzzlePanel, x));
-
-        }
-        puzzlePanel.add(plansza);
-
-    }
-
+    /** Sprawdzenie poprawności ułożonych puzzli */
     public void ifCorrect(JFrame f){
         correctIndicator = 0;
-        System.out.println(System.nanoTime()/100000000/60);
         for (PuzzleElement x : listOfElements) {
             if((x.puzzleCorner.getX() == x.correctPuzzlePlacesX[x.puzzleId]) && (x.puzzleCorner.getY() == x.correctPuzzlePlacesY[x.puzzleId])){
                 correctIndicator ++;
@@ -113,11 +115,14 @@ public class Puzzle{
         }
     }
 
+    /** Wyświetlenie gry "Puzzle" */
     public void drawPuzzle(JFrame f){
         f.add(puzzlePanel);
         f.add(bottomPanel);
         f.repaint();
     }
+
+    /** Ukrycie wyświetlonej zawartości */
     public void clearFrame(JFrame f){
         f.remove(rulesPanel);
         f.remove(puzzlePanel);
@@ -126,6 +131,7 @@ public class Puzzle{
         f.repaint();
     }
 
+    /** Wyświetlenie zasad gry "Puzzle" */
     public void drawRules(JFrame f){
         f.add(rulesPanel);
         f.repaint();

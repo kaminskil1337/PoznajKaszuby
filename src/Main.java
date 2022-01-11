@@ -1,6 +1,5 @@
 import javax.swing.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+
 
 public class Main {
     public static JFrame frame;
@@ -8,10 +7,9 @@ public class Main {
     public static Puzzle puzzle;
     public static Nuty nuty;
     public static Game game;
-    public static char key;
 
     public static void main(String[ ] args) {
-        ImageIcon icon = new ImageIcon("src/icon.png");
+        ImageIcon icon = new ImageIcon("src/images/icon.png");
         menu = new Menu();
         puzzle = new Puzzle();
         frame = new JFrame();
@@ -35,69 +33,59 @@ public class Main {
 
     }
 
-
+    /** Przejście z menu do gry "Kaszubskie Nuty" */
     public static void menuToNuty(){
         menu.clearFrame(frame);
         nuty.drawNuty(frame);
         nuty.placeElements();
-        nuty.btnMenu.addActionListener(e -> nutyToMenu());
+        nuty.btnMenu.addActionListener(e -> ToMenu());
         nuty.btnCheck.addActionListener(e -> nuty.ifCorrect(frame));
         nuty.btnReset.addActionListener(e -> nuty.resetPuzzles(frame));
     }
 
+    /** Przejście z menu do zasad gry "Kaszubskie Nuty" */
     public static void menuToRules1(){
         menu.clearFrame(frame);
         nuty.drawRules(frame);
-        nuty.btnMenuRules.addActionListener(e -> nutyToMenu());
+        nuty.btnMenuRules.addActionListener(e -> ToMenu());
     }
 
+    /** Przejście z menu do gry "Puzzle" */
     public static void menuToPuzzle(){
         menu.clearFrame(frame);
         puzzle.drawPuzzle(frame);
         puzzle.placePuzzles();
-        puzzle.btnMenu.addActionListener(e -> puzzleToMenu());
+        puzzle.btnMenu.addActionListener(e -> ToMenu());
         puzzle.btnCheck.addActionListener(e -> puzzle.ifCorrect(frame));
         puzzle.btnReset.addActionListener(e -> puzzle.resetPuzzles(frame));
     }
 
+    /** Przejście z menu do zasad gry "Puzzle" */
     public static void menuToRules2(){
         menu.clearFrame(frame);
         puzzle.drawRules(frame);
-        puzzle.btnMenuRules.addActionListener(e -> puzzleToMenu());
+        puzzle.btnMenuRules.addActionListener(e -> ToMenu());
     }
 
+    /** Przejście z menu do gry "Tabakierki" */
     public static void menuToGame(){
         menu.clearFrame(frame);
         game.drawGame(frame);
-        game.btnMenu.addActionListener(e -> gameToMenu());
+        game.btnMenu.addActionListener(e -> ToMenu());
         game.placeTrees();
     }
 
+    /** Przejście z menu do zasad gry "Tabakierki" */
     public static void menuToRules3(){
         menu.clearFrame(frame);
         game.drawRules(frame);
-        game.btnMenuRules.addActionListener(e -> gameToMenu());
+        game.btnMenuRules.addActionListener(e -> ToMenu());
     }
 
-    public static void nutyToMenu(){
-        nuty.clearFrame(frame);
-        menu.drawMenu(frame);
-        menu.btnExit.addActionListener(e -> System.exit(0));
-        menu.btnGame1.addActionListener(e -> menuToNuty());
-        menu.btnGame2.addActionListener(e -> menuToPuzzle());
-        menu.btnGame3.addActionListener(e -> menuToGame());
-    }
-
-    public static void puzzleToMenu(){
+    /** Przejście do menu z dowolnej gry */
+    public static void ToMenu(){
         puzzle.clearFrame(frame);
-        menu.drawMenu(frame);
-        menu.btnExit.addActionListener(e -> System.exit(0));
-        menu.btnGame1.addActionListener(e -> menuToNuty());
-        menu.btnGame2.addActionListener(e -> menuToPuzzle());
-        menu.btnGame3.addActionListener(e -> menuToGame());
-    }
-
-    public static void gameToMenu(){
+        nuty.clearFrame(frame);
         game.clearFrame(frame);
         menu.drawMenu(frame);
         menu.btnExit.addActionListener(e -> System.exit(0));
@@ -105,5 +93,6 @@ public class Main {
         menu.btnGame2.addActionListener(e -> menuToPuzzle());
         menu.btnGame3.addActionListener(e -> menuToGame());
     }
+
 
 }

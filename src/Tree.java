@@ -4,7 +4,9 @@ public class Tree {
 
     JLabel treeElement;
     int mapX, mapY;
-    int treeMap[][] = {
+
+    /** Macierz określająca w jakim miejscu ma być wyświetlone drzewo */
+    int[][] treeMap = {
             {0,0,0,0,0,0,0,1,0,0,0,0},
             {0,1,1,0,1,1,0,1,0,1,1,1},
             {0,0,1,0,1,0,0,1,0,0,1,0},
@@ -14,9 +16,9 @@ public class Tree {
             {0,1,1,0,1,0,1,1,1,1,0,1},
             {0,1,0,0,1,0,0,0,0,0,0,1}};
 
-    ImageIcon treeImg = new ImageIcon("src/tree.png");
+    ImageIcon treeImg = new ImageIcon("src/images/tree.png");
 
-    Tree(JPanel p, int id, int x, int y){
+    Tree(JPanel p, int id){
         mapY = id / 12;
         mapX = id % 12;
 

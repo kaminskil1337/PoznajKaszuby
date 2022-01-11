@@ -3,6 +3,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/** Klasa gry "Nuty" */
 public class Nuty {
     Boolean solved = false;
     public JPanel nutyPanel, bottomPanel, successPanel, rulesPanel;
@@ -11,9 +12,9 @@ public class Nuty {
     static int x = 0;
     static int correctIndicator = 0;
 
-    ImageIcon planszaImg = new ImageIcon("src/plansza2.png");
-    ImageIcon rulesImg = new ImageIcon("src/rules1Img.png");
-    ImageIcon info = new ImageIcon("src/infoNuty.png");
+    ImageIcon planszaImg = new ImageIcon("src/images/plansza2.png");
+    ImageIcon rulesImg = new ImageIcon("src/images/rules1Img.png");
+    ImageIcon info = new ImageIcon("src/images/infoNuty.png");
 
     List<NutyElement> listOfElements = new ArrayList<>();
 
@@ -69,6 +70,16 @@ public class Nuty {
         successPanel.add(successInfo);
     }
 
+    /** Ułożenie elementów na planszy */
+    public void placeElements(){
+        for(; x < 6; x++){
+            listOfElements.add(new NutyElement(nutyPanel, x));
+
+        }
+        nutyPanel.add(plansza);
+    }
+
+    /** Zresetowanie pozycji elementów na planszy */
     public void resetPuzzles(JFrame f){
         correctIndicator = 0;
         for (NutyElement el : listOfElements) {
@@ -86,14 +97,7 @@ public class Nuty {
 
     }
 
-    public void placeElements(){
-        for(; x < 6; x++){
-            listOfElements.add(new NutyElement(nutyPanel, x));
-
-        }
-        nutyPanel.add(plansza);
-    }
-
+    /** Sprawdzenie poprawności ułożonych elementów */
     public void ifCorrect(JFrame f){
         for (NutyElement x : listOfElements) {
             if ((x.elementCorner.getX() == x.correctElementX[x.elementId]) && (x.elementCorner.getY() == x.correctElementY[x.elementId])) {
@@ -110,13 +114,14 @@ public class Nuty {
         }
     }
 
+    /** Wyświetlenie gry "Kaszubskie Nuty" */
     public void drawNuty(JFrame f){
-
         f.add(nutyPanel);
         f.add(bottomPanel);
         f.repaint();
     }
 
+    /** Ukrycie wyświetlonej zawartości */
     public void clearFrame(JFrame f){
         f.remove(rulesPanel);
         f.remove(nutyPanel);
@@ -125,6 +130,7 @@ public class Nuty {
         f.repaint();
     }
 
+    /** Wyświetlenie zasad gry "Kaszubskie Nuty" */
     public void drawRules(JFrame f){
         f.add(rulesPanel);
         f.repaint();

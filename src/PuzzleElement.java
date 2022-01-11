@@ -14,18 +14,18 @@ public class PuzzleElement {
     Point prevPt, puzzleCorner;
     int[] correctPuzzlePlacesX = {140,390,640,890,140,390,640,890,140,390,640,890};
     int[] correctPuzzlePlacesY = {25,25,25,25,275,275,275,275,525,525,525,525};
-    ImageIcon puzz1 = new ImageIcon("src/1.png");
-    ImageIcon puzz2 = new ImageIcon("src/2.png");
-    ImageIcon puzz3 = new ImageIcon("src/3.png");
-    ImageIcon puzz4 = new ImageIcon("src/4.png");
-    ImageIcon puzz5 = new ImageIcon("src/5.png");
-    ImageIcon puzz6 = new ImageIcon("src/6.png");
-    ImageIcon puzz7 = new ImageIcon("src/7.png");
-    ImageIcon puzz8 = new ImageIcon("src/8.png");
-    ImageIcon puzz9 = new ImageIcon("src/9.png");
-    ImageIcon puzz10 = new ImageIcon("src/10.png");
-    ImageIcon puzz11 = new ImageIcon("src/11.png");
-    ImageIcon puzz12 = new ImageIcon("src/12.png");
+    ImageIcon puzz1 = new ImageIcon("src/images/1.png");
+    ImageIcon puzz2 = new ImageIcon("src/images/2.png");
+    ImageIcon puzz3 = new ImageIcon("src/images/3.png");
+    ImageIcon puzz4 = new ImageIcon("src/images/4.png");
+    ImageIcon puzz5 = new ImageIcon("src/images/5.png");
+    ImageIcon puzz6 = new ImageIcon("src/images/6.png");
+    ImageIcon puzz7 = new ImageIcon("src/images/7.png");
+    ImageIcon puzz8 = new ImageIcon("src/images/8.png");
+    ImageIcon puzz9 = new ImageIcon("src/images/9.png");
+    ImageIcon puzz10 = new ImageIcon("src/images/10.png");
+    ImageIcon puzz11 = new ImageIcon("src/images/11.png");
+    ImageIcon puzz12 = new ImageIcon("src/images/12.png");
     ImageIcon[] puzz = {puzz1, puzz2, puzz3, puzz4, puzz5, puzz6, puzz7, puzz8, puzz9, puzz10, puzz11, puzz12 };
 
     PuzzleElement(JPanel p, int id){
