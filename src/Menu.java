@@ -5,7 +5,7 @@ public class Menu {
     public JButton btnGame1, btnGame1Rules, btnGame2, btnGame2Rules, btnGame3, btnGame3Rules, btnExit;
     public JLabel background;
 
-    ImageIcon backgroundImg = new ImageIcon("src/images/menuBackground.png");
+    ImageIcon backgroundImg = new ImageIcon("images/menuBackground.png");
 
     public Menu() {
         menuPanel = new JPanel();

@@ -16,7 +16,7 @@ public class Tree {
             {0,1,1,0,1,0,1,1,1,1,0,1},
             {0,1,0,0,1,0,0,0,0,0,0,1}};
 
-    ImageIcon treeImg = new ImageIcon("src/images/tree.png");
+    ImageIcon treeImg = new ImageIcon("images/tree.png");
 
     Tree(JPanel p, int id){
         mapY = id / 12;

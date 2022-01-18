@@ -11,9 +11,9 @@ public class Puzzle{
     static int x = 0;
     static int correctIndicator = 0;
 
-    ImageIcon rulesImg = new ImageIcon("src/images/rules2Img.png");
-    ImageIcon planszaImg = new ImageIcon("src/images/background.png");
-    ImageIcon info = new ImageIcon("src/images/infoZamek.png");
+    ImageIcon rulesImg = new ImageIcon("images/rules2Img.png");
+    ImageIcon planszaImg = new ImageIcon("images/background.png");
+    ImageIcon info = new ImageIcon("images/infoZamek.png");
 
     List<PuzzleElement> listOfElements = new ArrayList<>();
 
@@ -41,18 +41,18 @@ public class Puzzle{
 
         btnMenu = new JButton();
         btnMenu.setBounds(240,22,280,140);
-        btnMenu.setText("Powrót do menu");
+        btnMenu.setText("Powrot do menu");
         bottomPanel.add(btnMenu);
 
         btnMenuRules = new JButton();
-        btnMenuRules.setText("Powrót do menu");
+        btnMenuRules.setText("Powrot do menu");
         btnMenuRules.setBounds(500, 750, 280, 140);
         rulesPanel.add(btnMenuRules);
         rulesPanel.add(rules);
 
         btnCheck = new JButton();
         btnCheck.setBounds(760, 22, 280, 140);
-        btnCheck.setText("Sprawdź");
+        btnCheck.setText("Sprawdz");
         bottomPanel.add(btnCheck);
 
         successInfo = new JLabel();

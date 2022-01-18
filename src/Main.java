@@ -9,7 +9,7 @@ public class Main {
     public static Game game;
 
     public static void main(String[ ] args) {
-        ImageIcon icon = new ImageIcon("src/images/icon.png");
+        ImageIcon icon = new ImageIcon("images/icon.png");
         menu = new Menu();
         puzzle = new Puzzle();
         frame = new JFrame();

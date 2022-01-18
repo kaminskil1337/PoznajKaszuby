@@ -12,9 +12,9 @@ public class Nuty {
     static int x = 0;
     static int correctIndicator = 0;
 
-    ImageIcon planszaImg = new ImageIcon("src/images/plansza2.png");
-    ImageIcon rulesImg = new ImageIcon("src/images/rules1Img.png");
-    ImageIcon info = new ImageIcon("src/images/infoNuty.png");
+    ImageIcon planszaImg = new ImageIcon("images/plansza2.png");
+    ImageIcon rulesImg = new ImageIcon("images/rules1Img.png");
+    ImageIcon info = new ImageIcon("images/infoNuty.png");
 
     List<NutyElement> listOfElements = new ArrayList<>();
 
@@ -41,19 +41,19 @@ public class Nuty {
         bottomPanel.setLayout(null);
 
         btnMenu = new JButton();
-        btnMenu.setText("Powrót do menu");
+        btnMenu.setText("Powrot do menu");
         btnMenu.setBounds(240,22,280,140);
         bottomPanel.add(btnMenu);
 
         btnMenuRules = new JButton();
-        btnMenuRules.setText("Powrót do menu");
+        btnMenuRules.setText("Powrot do menu");
         btnMenuRules.setBounds(500, 750, 280, 140);
         rulesPanel.add(btnMenuRules);
         rulesPanel.add(rules);
 
         btnCheck = new JButton();
         btnCheck.setBounds(760, 22, 280, 140);
-        btnCheck.setText("Sprawdź");
+        btnCheck.setText("Sprawdz");
         bottomPanel.add(btnCheck);
 
         successInfo = new JLabel();
@@ -99,6 +99,7 @@ public class Nuty {
 
     /** Sprawdzenie poprawności ułożonych elementów */
     public void ifCorrect(JFrame f){
+        correctIndicator = 0;
         for (NutyElement x : listOfElements) {
             if ((x.elementCorner.getX() == x.correctElementX[x.elementId]) && (x.elementCorner.getY() == x.correctElementY[x.elementId])) {
                 correctIndicator++;

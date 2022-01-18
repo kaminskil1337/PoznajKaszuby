@@ -17,14 +17,14 @@ public class Game{
 
     MoveListener moveListener;
 
-    ImageIcon congratsImg = new ImageIcon("src/images/congratsmessage.png");
-    ImageIcon kaszub = new ImageIcon("src/images/kaszub.png");
-    ImageIcon fail = new ImageIcon("src/images/fail.png");
-    ImageIcon start = new ImageIcon("src/images/start.png");
-    ImageIcon startMessage = new ImageIcon("src/images/startmessage.png");
-    ImageIcon tabaka = new ImageIcon("src/images/tabaka.png");
-    ImageIcon backgroundImg = new ImageIcon("src/images/gamebackground.png");
-    ImageIcon rulesImg = new ImageIcon("src/images/rules3Img.png");
+    ImageIcon congratsImg = new ImageIcon("images/congratsmessage.png");
+    ImageIcon kaszub = new ImageIcon("images/kaszub.png");
+    ImageIcon fail = new ImageIcon("images/fail.png");
+    ImageIcon start = new ImageIcon("images/start.png");
+    ImageIcon startMessage = new ImageIcon("images/startmessage.png");
+    ImageIcon tabaka = new ImageIcon("images/tabaka.png");
+    ImageIcon backgroundImg = new ImageIcon("images/gamebackground.png");
+    ImageIcon rulesImg = new ImageIcon("images/rules3Img.png");
 
     public Game() {
         background = new JLabel();
@@ -40,7 +40,7 @@ public class Game{
         rulesPanel.setLayout(null);
 
         btnMenuRules = new JButton();
-        btnMenuRules.setText("Powrót do menu");
+        btnMenuRules.setText("Powrot do menu");
         btnMenuRules.setBounds(500, 750, 280, 140);
         rulesPanel.add(btnMenuRules);
         rulesPanel.add(rules);
@@ -90,7 +90,7 @@ public class Game{
 
         btnMenu = new JButton();
         btnMenu.setBounds(240,22,280,140);
-        btnMenu.setText("Powrót do menu");
+        btnMenu.setText("Powrot do menu");
         bottomPanel.add(btnMenu);
 
         ClickListener clickListener = new ClickListener();
