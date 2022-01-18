@@ -1,5 +1,3 @@
-package poznajKaszuby;
-
 import javax.swing.*;
 
 public class Tree {

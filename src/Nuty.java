@@ -1,5 +1,3 @@
-package poznajKaszuby;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -101,7 +99,6 @@ public class Nuty {
 
     /** Sprawdzenie poprawności ułożonych elementów */
     public void ifCorrect(JFrame f){
-        correctIndicator = 0;
         for (NutyElement x : listOfElements) {
             if ((x.elementCorner.getX() == x.correctElementX[x.elementId]) && (x.elementCorner.getY() == x.correctElementY[x.elementId])) {
                 correctIndicator++;
