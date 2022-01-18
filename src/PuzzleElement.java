@@ -63,8 +63,8 @@ public class PuzzleElement {
     }
 
     private class ReleaseListener extends MouseAdapter {
-        int[] arrX = {140,390,640,890};
-        int[] arrY = {25,275,525};
+        int[] arrX = {140,390,640,890,890};
+        int[] arrY = {25,275,525,525};
         public void mouseReleased(MouseEvent e) {
             int x = ((int) puzzleCorner.getX() - 140 + 125) / 250;
             int y = ((int) puzzleCorner.getY() -25 + 125) / 250;
