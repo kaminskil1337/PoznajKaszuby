@@ -1,6 +1,5 @@
 import javax.swing.*;
 
-
 public class Main {
     public static JFrame frame;
     public static Menu menu;
